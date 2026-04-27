@@ -4,59 +4,59 @@
 
 
 # Класс узла
-class Node:
-    def __init__(self, data):
-        self.data = data      # значение
-        self.next = None      # ссылка на следующий элемент
+    class Node:
+        def __init__(self, data):
+            self.data = data      # значение
+            self.next = None      # ссылка на следующий элемент
 
 
 # Связанный список 
-class LinkedList:
-    def __init__(self):
-        self.head = None  # начало списка
-
-    def append(self, data):
-        new_node = Node(data)
-
-        if self.head is None:
-            self.head = new_node
-            return
-
-        # идем до последнего элемента
-        current = self.head
-        while current.next is not None:
-            current = current.next
-
-        # цепляем новый узел
-        current.next = new_node
-
-    # вывод списка
-    def display(self):
-        current = self.head
-
-        # если список пуст
-        if current is None:
-            print("Список пуст")
-            return
-
-        # проходим по всем элементам
-        while current is not None:
-            print(current.data, end=" -> ")
-            current = current.next
-
-        print("None")
+    class LinkedList:
+        def __init__(self):
+            self.head = None  # начало списка
+    
+        def append(self, data):
+            new_node = Node(data)
+    
+            if self.head is None:
+                self.head = new_node
+                return
+    
+            # идем до последнего элемента
+            current = self.head
+            while current.next is not None:
+                current = current.next
+    
+            # цепляем новый узел
+            current.next = new_node
+    
+        # вывод списка
+        def display(self):
+            current = self.head
+    
+            # если список пуст
+            if current is None:
+                print("Список пуст")
+                return
+    
+            # проходим по всем элементам
+            while current is not None:
+                print(current.data, end=" -> ")
+                current = current.next
+    
+            print("None")
 
 
 # Проверка работы
 
-ll = LinkedList()
+    ll = LinkedList()
+    
+    ll.append(5)
+    ll.append(10)
+    ll.append(15)
 
-ll.append(5)
-ll.append(10)
-ll.append(15)
-
-print("Вывод списка:")
-ll.display()
+    print("Вывод списка:")
+    ll.display()
 
 #Контрольные вопросы
 
